@@ -301,16 +301,34 @@
 /*style for dots*/
 
 
-#button {
+#button, #logbutton, #reqbutton {
   background-color: #990000;
   color:white;
   border:none;
   font-family: 'Share Tech Mono', serif;
-  transition: all 0.2s ease-in-out
+  transition: all 0.2s ease-in-out;
+  opacity:1.0;
 }
 
-#button:hover {
+#button, #logbutton, #reqbutton:hover {
    opacity:0.6;
+}
+
+#button, #logbutton, #reqbutton:visited {
+  background-color: #B20000;
+  color:white;
+  border:none;
+  font-family: 'Share Tech Mono', serif;
+  transition: all 0.2s ease-in-out;
+  opacity: 1.0;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#newUser {
+  position:relative;
 }
 
 h1 {
@@ -331,8 +349,12 @@ p {
 }
 
 body {
-  background-image: url("../images/mainbk2.jpg");
   font-family: 'Share Tech Mono', sans-serif;
+}
+
+.mainbk {
+    background-image: url("../images/mainbk2.jpg");
+    font-family: 'Share Tech Mono', sans-serif;
 }
 
 .form-control {

@@ -5,6 +5,8 @@ var mongoose = require("mongoose");
 var exphbs = require("express-handlebars");
 var request = require("request");
 
+var Example = require("./user.js");
+
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
@@ -40,23 +42,44 @@ db.once("open", function() {
 
 //routes
 
-app.get('/', function(req, res, next, error){
-	// Log any errors
-    if (error) {
-      console.log(error);
-    }
-    // Or send the doc to the browser as a json object
-    else {
+//routes to home page
+app.get('/', function(req, res, next){
+
     res.render("index",{ title: 'Express' });
-      }
+
 });
 
 
 
 
+// Routes to post new user to db
+app.post("/submit", function(req, res) {
+
+  // We use the "Example" class we defined above to check our req.body against our user model
+  var user = new Example(req.body);
+
+  console.log(req.body);
+
+  // With the new "Example" object created, we can save our data to mongoose
+  // Notice the different syntax. The magic happens in userModel.js
+  user.save(function(error, doc) {
+    // Send any errors to the browser
+    if (error) {
+      res.send(error);
+    }
+    // Otherwise, send the new doc to the browser
+    else {
+      res.send(doc);
+      console.log("user");
+    }
+  });
+});
+
+
+
 // Listen on port 27017
-app.listen(process.env.PORT || 3000, function() {
-  console.log("App running on port 3000!");
+app.listen(process.env.PORT || 2020, function() {
+  console.log("App running on port 2020!");
 });
 
 

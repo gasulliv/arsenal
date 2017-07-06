@@ -26,12 +26,30 @@
 
 <script>
 
-$("#regbutton").on("click" function(){
+function loginButton (){
 
-  $("#existingUser").fadeOut(2000);
-  $("#newUser").fadeIn(4000);
 
-});
+	$("#reqbutton").on("click", function(){
+  		$("#existingUser").fadeOut('slow', function(){
+  			$("#existingUser").replaceWith(" <div id = 'newUser'><div class='input-group'><input type='text' class='form-control' placeholder='Username' name = 'username' aria-describedby='basic-addon1'></div><p><div class='input-group'><input type='text' name = 'password' class='form-control' placeholder='Password' aria-describedby='basic-addon1'></div></p><p><div class='input-group'><input type='text' class='form-control' name = 'email' placeholder='Email' aria-describedby='basic-addon1'></div></p><br></div>").fadeIn('slow');
+
+  		$("#reqbutton").text("Submit");
+  		});
+
+	});
+
+
+   //	$("#logbutton").on("click", function(){
+  			//$("#newUser").fadeOut('slow', function(){
+  	// 			$("#newUser").replaceWith(" <div id = 'existingUser'><div class='input-group'><input type='text' class='form-control' name = 'username' placeholder='Username' aria-describedby='basic-addon1'></div><p><div class='input-group'><input type='text' class='form-control' name = 'password' placeholder='Password' aria-describedby='basic-addon1'></div></p><br></div>").fadeIn('slow');
+  	// 		});
+  	// });
+
+   }
+
+loginButton();
+
+
 </script>
 
 </html>

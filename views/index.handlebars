@@ -10,33 +10,23 @@
           <h1>ARSENAL</h1>
           <p>A weapons guide and arsenal planning app for Gears of War</p>
           <p>
+          <form action = '/submit' method= 'post'>
           <div id = "existingUser">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+              <input type="text" class="form-control" name = "username" placeholder="Username" aria-describedby="basic-addon1">
             </div><p>
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+              <input type="text" class="form-control" name = "password" placeholder="Password" aria-describedby="basic-addon1">
             </div></p><br>
+            </form>
           </div>
           <!--toggled when register user is selected-->
-          <div id = "newUser">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-            </div><p>
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
-            </div>
-            </p><br>
-          </div>
             <div class="btn-group" role="group" aria-label="...">
-              <p><button type="button" class="btn btn-danger" id = "button">Login</button><br><br>
-              <button type="button" class="btn btn-danger" id = "regbutton">Create an Account</button></p>
+              <p><button type="submit" class="btn btn-danger" id = "logbutton">Login</button><br><br>
+              <button type="submit" class="btn btn-danger" id = "reqbutton">Create an Account</button></p>
             </p>
           </div>
-
+        </form>
         </div>
       </div>
     </div>
